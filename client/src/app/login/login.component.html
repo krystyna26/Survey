@@ -1,0 +1,7 @@
+<div>
+  <form #myForm="ngForm" (ngSubmit)="onSubmit()" method="post">
+    Your name: <input type='text' name='writerName' required minlength="3" [(ngModel)] = 'user.first_name' #writerName = 'ngModel'>
+    <span style="color:red" *ngIf="!writerName.valid">Name requires at least 3 characters.</span>
+    <button type="submit" name="submit" [disabled]="!myForm.valid">Login</button>
+  </form>
+</div>

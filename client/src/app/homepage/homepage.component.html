@@ -1,0 +1,38 @@
+<p>Homepage works!</p>
+
+
+<a [routerLink]="['/create_survey']">Create a New Poll</a>
+<a href="/">Logout</a>
+
+<h3>Current Polls:</h3>
+<input type="text" name="search" value="Serach">
+  <table>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Question</td>
+        <td>Posted on</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let survey of surveys">
+        <td>{{survey.writerName}}</td>
+
+        <td>
+          <a [routerLink]="['/goto_survey',survey._id]">
+          {{survey.question}}</a>
+        </td>
+
+        <td>{{survey.createdAt | date: 'longDate'}}</td>
+        
+        <td>
+            <a *ngIf="first_name == survey.writerName" 
+               [routerLink]="['/delete,survey._id']" 
+               (click)="delete(survey._id)">
+               Delete</a>
+        </td>
+      </tr>
+    </tbody>
+    
+  </table>
