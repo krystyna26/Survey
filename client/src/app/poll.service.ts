@@ -10,10 +10,10 @@ export class PollService {
   constructor(private _http: Http, private router: Router, private route: ActivatedRoute) { }
 
   setUserName(name){
-    this.name = name;
+    sessionStorage.setItem('name', name);
   }
   getName(){
-    return this.name;
+    return sessionStorage.getItem('name');
   }
 
   // display all x 
@@ -31,8 +31,8 @@ export class PollService {
   }
 
   //add one survey x
-  addSurvey(question,ans1,ans2,ans3,ans4){
-    this._http.post('/addSurvey',{writerName: this.name, question: question, answer1: ans1, answer2: ans2, answer3: ans3, answer4: ans4,})
+  addSurvey(survey){
+    this._http.post('/addSurvey', survey)
     .subscribe(
       (response) => {
         console.log('added survey');

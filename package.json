@@ -1,17 +1,28 @@
 {
   "name": "exam",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
     "express": "^4.16.2",
     "mongoose": "^4.13.7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krystyna26/Survey.git"
+  },
+  "bugs": {
+    "url": "https://github.com/krystyna26/Survey/issues"
+  },
+  "homepage": "https://github.com/krystyna26/Survey#readme",
+  "description": ""
 }

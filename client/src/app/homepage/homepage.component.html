@@ -1,38 +1,51 @@
-<p>Homepage works!</p>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 
+<div class="home">
+  <div class="nava">
+      <h3 class="wel col-xs-6">Welcome {{first_name}} ! </h3>
+      
+      <div class="ac col-xs-6" >
+        <h4><a [routerLink]="['/create_survey']">Create a New Poll</a></h4>
+        <h4><a href="/" style="margin-left: 20px">Logout</a></h4>
+      </div>
+  </div>
+  
 
-<a [routerLink]="['/create_survey']">Create a New Poll</a>
-<a href="/">Logout</a>
+  <div>
+    <h3>Current Polls:</h3>
+    <input type="text" name="search" placeholder="Search" style="margin: 20px; text-align:right ">
+  </div>
 
-<h3>Current Polls:</h3>
-<input type="text" name="search" value="Serach">
-  <table>
-    <thead>
-      <tr>
-        <td>Name</td>
-        <td>Question</td>
-        <td>Posted on</td>
-        <td>Action</td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let survey of surveys">
-        <td>{{survey.writerName}}</td>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Question</td>
+          <td>Posted on</td>
+          <td>Action</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let survey of surveys">
+          <td>{{survey.writerName}}</td>
 
-        <td>
-          <a [routerLink]="['/goto_survey',survey._id]">
-          {{survey.question}}</a>
-        </td>
+          <td>
+            <a [routerLink]="['/goto_survey',survey._id]" style="color:black">
+            {{survey.question}}</a>
+          </td>
 
-        <td>{{survey.createdAt | date: 'longDate'}}</td>
-        
-        <td>
-            <a *ngIf="first_name == survey.writerName" 
-               [routerLink]="['/delete,survey._id']" 
-               (click)="delete(survey._id)">
-               Delete</a>
-        </td>
-      </tr>
-    </tbody>
-    
-  </table>
+          <td>{{survey.createdAt | date: 'longDate'}}</td>
+          
+          <td>
+              <a *ngIf="first_name == survey.writerName" 
+                [routerLink]="['/delete,survey._id']" 
+                (click)="delete(survey._id)">
+                Delete</a>
+          </td>
+        </tr>
+      </tbody>
+      
+    </table>
+</div>

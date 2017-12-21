@@ -1,14 +1,24 @@
-<p>Create component works!</p>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<div class="container" style="background-image: url('../../assets/SanFrancisco.jpg')">
+  
+  <p>Create component works!</p>
 
-<a [routerLink]="['/home']">Cancel</a>
+  <div style="text-align:right">
+    <a [routerLink]="['/home']">Cancel</a>
+  </div>
 
-<h3>Put the question and options here:</h3>
+  <h3>Put the question and options here:</h3>
 
-<form #myForm = "ngForm" (ngSubmit)="onSubmit()" method="post">
-  Question: <input type="text" name="question" required minlength="8" [(ngModel)] = "sur.question" #question ="ngModel">  <span style="color:red" *ngIf="!question.valid">Question requires at least 8 characters!</span><br>
-  Option 1: <input type="text" name="answer1"  required minlength="3" [(ngModel)] = 'sur.answer1' #answer1 = 'ngModel'> <span style="color:red" *ngIf="!answer1.valid">Option 1 requires at least 3 characters!</span><br>
-  Option 2: <input type="text" name="answer2"  required minlength="3" [(ngModel)] = 'sur.answer2' #answer2 = 'ngModel'> <span style="color:red" *ngIf="!answer2.valid">Option 2 irequires at least 3 characters!</span><br>
-  Option 3: <input type="text" name="answer3"  required minlength="3" [(ngModel)] = 'sur.answer3' #answer3 = 'ngModel'> <span style="color:red" *ngIf="!answer3.valid">Option 3 requires at least 3 characters!</span><br>
-  Option 4: <input type="text" name="answer4"  required minlength="3" [(ngModel)] = 'sur.answer4' #answer4 = 'ngModel'> <span style="color:red" *ngIf="!answer4.valid">Option 4 requires at least 3 characters!</span><br>
-  <button type="submit" name="submit" [disabled]="!myForm.valid">Create Poll</button>
-</form>
+  <form #myForm = "ngForm" (ngSubmit)="onSubmit()" method="post" class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Question:</label> <input class="form-control" type="text" name="question" required minlength="8" [(ngModel)] = "sur.question" #question ="ngModel"> <span style="color:red" *ngIf="!question.valid">Question requires at least 8 characters!</span><br>
+        <label class="col-sm-2 control-label">Option 1:</label> <input class="form-control" type="text" name="answer1"  required minlength="3" [(ngModel)] = 'sur.answer1'  #answer1 = 'ngModel'> <span style="color:red" *ngIf="!answer1.valid">Option 1 requires at least 3 characters!</span><br>
+        <label class="col-sm-2 control-label">Option 2:</label> <input class="form-control" type="text" name="answer2"  required minlength="3" [(ngModel)] = 'sur.answer2'  #answer2 = 'ngModel'> <span style="color:red" *ngIf="!answer2.valid">Option 2 irequires at least 3 characters!</span><br>
+        <label class="col-sm-2 control-label">Option 3:</label> <input class="form-control" type="text" name="answer3"  required minlength="3" [(ngModel)] = 'sur.answer3'  #answer3 = 'ngModel'> <span style="color:red" *ngIf="!answer3.valid">Option 3 requires at least 3 characters!</span><br>
+        <label class="col-sm-2 control-label">Option 4:</label> <input class="form-control" type="text" name="answer4"  required minlength="3" [(ngModel)] = 'sur.answer4'  #answer4 = 'ngModel'> <span style="color:red" *ngIf="!answer4.valid">Option 4 requires at least 3 characters!</span><br>
+        <button class="btn btn-success" type="submit" name="submit" [disabled]="!myForm.valid">Create Poll</button>
+      </div>
+  </form>
+</div>

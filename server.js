@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 // static folder
 app.use(express.static(path.join(__dirname, './client/dist')));
 app.use(express.static(path.join(__dirname, './static')));
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
 
 // mongo DB
 require('./server/config/mongoose.js');

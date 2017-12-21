@@ -19,18 +19,19 @@ module.exports = {
             writerName: req.body.writerName,
             question : req.body.question,
             answer1: req.body.answer1,
-            vote_1 : 0,
+            vote1 : 0,
             answer2: req.body.answer2,
-            vote_2 : 0,
+            vote2 : 0,
             answer3: req.body.answer3,
-            vote_3 : 0,
+            vote3 : 0,
             answer4: req.body.answer4,
-            vote_4 : 0
+            vote4 : 0
         });
-
+        console.log('NEW SURVEY: ' + new_survey);
         new_survey.save(function(err){
             if(err){
                 console.log("something went wrong...");
+                throw err;
             }else{
                 console.log('added survey to db in addSurvey() surveys.js');
             } 
@@ -48,18 +49,18 @@ module.exports = {
     voteOnThisSurvey: function(req,res){
         Survey.findById(req.params.surveyID, function(err,survey){
             if(req.params.answer == survey.answer1){
-                survey.vote_1 = survey.vote_1 + 1;
+                survey.vote1 = survey.vote1 + 1;
             }else if(req.params.answer == survey.answer2){
-                survey.vote_2 = survey.vote_2 + 1;
+                survey.vote2 = survey.vote2 + 1;
             }else if(req.params.answer == survey.answer3){
-                survey.vote_3 = survey.vote_3 + 1;
+                survey.vote3 = survey.vote3 + 1;
             }else if(req.params.answer == survey.answer4){
-                survey.vote_4 = survey.vote_4 + 1;
+                survey.vote4 = survey.vote4 + 1;
             }
 
-            Survey.save(function(err){
+            survey.save(function(err){
                 if(err){
-                    console.log("something went wrong...");
+                    console.log("something went wrong in voteOnThisSurvey() in surveys.js", err);
                 }else{
                     console.log('added vote to db in voteOnThisSurvey() in surveys.js ');
                 }

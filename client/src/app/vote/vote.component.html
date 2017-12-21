@@ -1,44 +1,44 @@
-<p>Vote component works!</p>
-
-<a [routerLink]="['/home']">Go to Polls</a>
-
-<h3>{{oneSurvey.question}}</h3>
-<p>Click the Vote button to choose one</p>
-<div>
-  <table>
-    <thead>
-      <tr>
-        <td>Option</td>
-        <td>Current count of Votes</td>
-        <td>Action</td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{oneSurvey.answer1}}</td>
-        <td>{{oneSurvey.vote1}}</td>
-        <td>
-            <button name="vote1" (click)="onVoteButton(survey._id,survey.answer1)">Vote</button>
-        </td>
-        <tr>
-          <td>{{oneSurvey.answer2}}</td>
-          <td>{{oneSurvey.vote2}}</td>
-          <td>
-              <button name="vote2" (click)="onVoteButton(survey._id,survey.answer2)">Vote</button>
-        </td>
-        <tr>
-          <td>{{oneSurvey.answer3}}</td>
-          <td>{{oneSurvey.vote3}}</td>
-          <td>
-              <button name="vote3" (click)="onVoteButton(survey._id,survey.answer3)">Vote</button>
-        </td>
-        <tr>
-          <td>{{oneSurvey.answer4}}</td>
-          <td>{{oneSurvey.vote4}}</td>
-          <td>
-              <button name="vote4" (click)="onVoteButton(survey._id,survey.answer4)">Vote</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+    <div class="main" >
+      <div class="goto">
+        <a [routerLink]="['/home']" >Go to Polls</a>
+      </div>
+      <h3>{{oneSurvey.question}}</h3>
+      <p>Click the 'Vote' button to choose one</p>
+    
+      <div>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <td>Option</td>
+              <td>Current count of Votes</td>
+              <td>Action</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{oneSurvey.answer1}}</td>
+              <td>{{oneSurvey.vote1}}</td>
+              <td><button name="vote1" (click)="onVoteButton(oneSurvey._id,oneSurvey.answer1)">Vote</button></td>
+            </tr>
+            <tr>
+              <td>{{oneSurvey.answer2}}</td>
+              <td>{{oneSurvey.vote2}}</td>
+              <td><button name="vote2" (click)="onVoteButton(oneSurvey._id,oneSurvey.answer2)">Vote</button></td>
+            </tr>
+            <tr>
+              <td>{{oneSurvey.answer3}}</td>
+              <td>{{oneSurvey.vote3}}</td>
+              <td><button name="vote3" (click)="onVoteButton(oneSurvey._id,oneSurvey.answer3)">Vote</button></td>
+            </tr>
+            <tr>
+              <td>{{oneSurvey.answer4}}</td>
+              <td>{{oneSurvey.vote4}}</td>
+              <td><button name="vote4" (click)="onVoteButton(oneSurvey._id,oneSurvey.answer4)">Vote</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>

@@ -1,0 +1,13 @@
+
+.main {
+    background-image: url('../../assets/santa-cruz.jpg');
+    padding: 40px;
+}
+
+.goto {
+    text-align:right;
+}
+
+thead {
+    font-weight: bold;
+}table{width:75%;}

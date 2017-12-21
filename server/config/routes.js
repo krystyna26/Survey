@@ -29,4 +29,6 @@ module.exports = function(app){
     app.get('/delete/:surveyID',function(req,res){
         surveys.delete(req,res);
     })
+
+    app.all("*", (request, response) => { response.sendFile(path.resolve("./client/dist/index.html")) });
 }

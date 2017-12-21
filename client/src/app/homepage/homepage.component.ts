@@ -15,9 +15,10 @@ export class HomepageComponent implements OnInit {
   constructor(private _pollService: PollService, private router: Router) { }
 
   ngOnInit() {
-    this.first_name = this._pollService.getName(); //getName()
-    this._pollService.allSurveys( // allPolls
-      (data)=>{ this.surveys = data;
+     //getName()
+    this._pollService.allSurveys( (data)=> { 
+      this.surveys = data;
+      this.first_name = this._pollService.getName();
       });
   }
 

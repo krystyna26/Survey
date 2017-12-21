@@ -16,14 +16,14 @@ export class VoteComponent implements OnInit {
   constructor(private _pollService: PollService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    // send id from route
+    // get id from url
     this.activatedRoute.params.subscribe((params: Params) => {
       this.id = params['id'];
     });
     
     // show particular survey
     this.oneSurvey = this._pollService.showSurvey(this.id, 
-    (data) => { this.oneSurvey = data;
+      (data) => { this.oneSurvey = data;
     })
   }
 

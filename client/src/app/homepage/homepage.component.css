@@ -1,0 +1,28 @@
+.home {
+    background-image: url('../../assets/ocean.jpg');
+    padding: 40px;
+}
+
+.got {
+    text-align:right;
+}
+
+thead {
+    font-weight: bold;
+}
+.nava {
+    
+}
+.wel {
+    display: inline-block;
+}
+
+.ac {
+    text-align:right;
+    display: inline-block;
+   
+}
+
+h4 {
+    color: black;
+}

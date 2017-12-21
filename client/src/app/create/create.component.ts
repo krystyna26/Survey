@@ -12,6 +12,7 @@ export class CreateComponent implements OnInit {
   surveys;
 
   sur = {
+    writerName: sessionStorage.getItem('name'),
     question:"",
     answer1:"",
     answer2:"",
@@ -26,15 +27,16 @@ export class CreateComponent implements OnInit {
 
   onSubmit(){
     //ad survey
-    this._pollService.addSurvey(this.sur.question, this.sur.answer1, this.sur.answer2, this.sur.answer3, this.sur.answer4);
+    this._pollService.addSurvey(this.sur);
     // go to homepage
-    this.router.navigate(['home']);
     this.sur = {
+      writerName: '',
       question:"",
       answer1:"",
       answer2:"",
       answer3:"",
       answer4:"",
     }
+    this.router.navigate(['home']);
   }
 }
